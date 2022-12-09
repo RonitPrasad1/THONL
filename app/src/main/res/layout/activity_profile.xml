@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background2"
+    android:padding="20dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/HomePageActivityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thank you, you have successfully logged in with the email:"
+        android:textColor="@color/black"
+        style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+    <TextView
+        android:id="@+id/EmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: "
+        android:color = "@color/black"
+        style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+    <Button
+        android:id="@+id/HomePageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1F45FC"
+        android:text="Home Page" />
+
+    <Button
+        android:id="@+id/LogOutButton"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1F45FC"
+        android:text="LOG OUT" />
+
+</LinearLayout>

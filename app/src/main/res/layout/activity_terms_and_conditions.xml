@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/background2"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/TermsAndConditionsTextView1"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/TermsAndConditionsMessageTextView2"
+        android:layout_alignTop="@+id/TermsAndConditionsMessageTextView2"
+        android:layout_alignEnd="@+id/TermsAndConditionsMessageTextView2"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="-46dp"
+        android:layout_marginEnd="84dp"
+        android:gravity="center"
+        android:text="@string/terms_and_conditions_page" />
+
+    <TextView
+        android:id="@+id/TermsAndConditionsMessageTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="444dp"
+        android:gravity="center"
+        android:text="@string/terms_and_conditions_message1"
+        android:textColor="@color/black"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/TermsAndConditionsMessageTextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="104dp"
+        android:layout_alignTop="@+id/TermsAndConditionsMessageTextView4"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="345dp"
+        android:gravity="center"
+        android:text="@string/terms_and_conditions_message2"
+        android:textColor="@color/black"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/TermsAndConditionsMessageTextView4"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:layout_alignTop="@+id/TermsAndConditionsMessageTextView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="251dp"
+        android:gravity="center"
+        android:text="@string/terms_and_conditions_message3"
+        android:textColor="@color/black"
+        android:textStyle="italic" />
+
+
+</RelativeLayout>

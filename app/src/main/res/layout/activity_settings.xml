@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/background2"
+    android:layout_height="match_parent">
+
+    <!-- About Us Button -->
+
+    <TextView
+        android:id="@+id/SettingPageActivityTextView"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="25dp"
+        android:text="@string/settings_page"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/AboutUsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/SettingPageActivityTextView"
+        android:layout_marginBottom="-163dp"
+        android:backgroundTint="#1F45FC"
+        android:text="@string/AboutUs" />
+
+    <Button
+        android:id="@+id/TermsAndConditionsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/AboutUsButton"
+        android:layout_marginBottom="-100dp"
+        android:backgroundTint="#1F45FC"
+        android:text="@string/TermsAndConditionsButton" />
+
+    <Button
+        android:id="@+id/SettingsLogOutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TermsAndConditionsButton"
+        android:layout_marginBottom="-100dp"
+        android:backgroundTint="#1F45FC"
+        android:text="Log Out" />
+
+</RelativeLayout>

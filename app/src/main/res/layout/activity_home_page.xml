@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    android:padding="30dp">
+
+  <TextView
+      android:id="@+id/HomePageActivityTextView"
+      style="@style/TextAppearance.MaterialComponents.Headline6"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="25dp"
+      android:text="@string/home_page"
+      android:textColor="@color/black"
+      android:textStyle="bold" />
+
+  <!-- Wheel Button -->
+  <ImageButton
+      android:id="@+id/SettingImageButton"
+      android:layout_width="26dp"
+      android:layout_height="23dp"
+      android:layout_marginEnd="91dp"
+      android:layout_marginBottom="209dp"
+      android:layout_toStartOf="@+id/HomePageActivityTextView"
+      android:contentDescription="@string/settingsButton"
+      android:src="@drawable/settingsbutton" />
+
+</RelativeLayout>

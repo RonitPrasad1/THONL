@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    android:padding="30dp">
+
+    <!-- App Title -->
+
+    <!--Email Portion is listed below: -->
+
+    <TextView
+        android:id="@+id/TitleLabelTextView"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/EmailTextInputLayout"
+        android:layout_centerHorizontal="false"
+        android:layout_marginBottom="25dp"
+        android:text="@string/log_in"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/EmailTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/passwordTextInputLayout"
+        android:layout_marginBottom="10dp">
+
+        <EditText
+            android:id="@+id/EmailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--Password Portion is listed below: -->
+    <com.google.android.material.textfield.TextInputLayout
+        style = "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/passwordTextInputLayout"
+        app:passwordToggleEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            android:hint="@string/password" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Feature: Log In Button  -->
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordTextInputLayout"
+        android:layout_marginTop="62dp"
+        android:backgroundTint="#1F45FC"
+        android:text="@string/log_in2" />
+
+    <!--Feature: Register Button  -->
+    <Button
+        android:id="@+id/RegisterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordTextInputLayout"
+        android:layout_alignStart="@+id/LoginButton"
+        android:layout_alignEnd="@+id/LoginButton"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="0dp"
+        android:backgroundTint="#1F45FC"
+        android:text="@string/register_an_account" />
+
+    <!--Feature: Forgot Password  -->
+    <TextView
+        android:id="@+id/ForgotPasswordTextView"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordTextInputLayout"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="22dp"
+        android:layout_toEndOf="@+id/RememberPasswordRadioButton"
+        android:text="@string/forgotPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <!--Feature: Remember Password Radio Button -->
+    <RadioButton
+        android:id="@+id/RememberPasswordRadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordTextInputLayout"
+        android:layout_alignStart="@+id/passwordTextInputLayout"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:buttonTint="#1F45FC"
+        android:checked="false"
+        android:text="@string/remember_password"
+        android:textSize="12sp" />
+
+    <!--Feature: Version Text -->
+    <TextView
+        android:id="@+id/VersionTextView"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/RegisterButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-126dp"
+        android:text="@string/Version"
+        android:textColor="#666666" />
+
+</RelativeLayout>
