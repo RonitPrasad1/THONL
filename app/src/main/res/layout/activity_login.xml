@@ -5,10 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
     android:padding="30dp">
-
-    <!-- App Title -->
 
     <!--Email Portion is listed below: -->
 
@@ -91,7 +88,7 @@
     <TextView
         android:id="@+id/ForgotPasswordTextView"
         style="@style/TextAppearance.MaterialComponents.Caption"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordTextInputLayout"
         android:layout_marginStart="63dp"
@@ -117,15 +114,45 @@
         android:textSize="12sp" />
 
     <!--Feature: Version Text -->
+
+    <!--Feature: Version Text -->
+
+    <TextView
+        android:id="@+id/AboutUsTextView"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/RegisterButton"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="-137dp"
+        android:layout_toStartOf="@+id/DividerTextView"
+        android:text="@string/AboutUsName"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/VersionTextView"
         style="@style/TextAppearance.MaterialComponents.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/RegisterButton"
+        android:layout_alignLeft="@+id/DividerTextView"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="121dp"
+        android:text="@string/Version"
+        android:textColor="#666666" />
+
+    <TextView
+        android:id="@+id/DividerTextView"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LoginButton"
         android:layout_alignBottom="@+id/RegisterButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-126dp"
-        android:text="@string/Version"
+        android:layout_marginTop="168dp"
+        android:layout_marginBottom="-136dp"
+        android:text="@string/Divider"
         android:textColor="#666666" />
 
 </RelativeLayout>

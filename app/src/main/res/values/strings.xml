@@ -1,13 +1,16 @@
 <resources>
 
-    <string name="app_name"> ThONL </string>
+    <string name="app_name"> THONL </string>
     <string name="forgotPassword"> <b> Forgot Password? </b> </string>
     <string name="RedirectLogin"> Remember Password! <b> Login </b> </string>
     <string name="HaveAnAccount"> Already have an account? <b>  Login </b> </string>
+    <string name="AboutUsBackRedirection"> Return <b> back! </b> </string>
     <string name="AboutUs"> About Us Page </string>
     <string name="settingsButton"> </string>
-    <string name="Version"> <b> Version 2.54.2.1 </b> </string>
-    <string name="log_in">Log In</string>
+    <string name="Version"> <b> Version 1.5 </b> </string>
+    <string name="Divider"> <b> | </b> </string>
+    <string name="log_in">Login</string>
+    <string name="AboutUsName"> <b> ABOUT US </b> </string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="log_in2">Log In</string>
@@ -16,19 +19,15 @@
     <string name="enter_email">Enter Email</string>
     <string name="submit">Submit</string>
     <string name="reset_password">Reset Password</string>
-    <string name="home_page">HOME PAGE</string>
+    <string name="home_page">My Health Page</string>
     <string name="about_us_page">About Us</string>
     <string name="settings_page">Settings Page</string>
     <string name="sign_up">Sign Up</string>
     <string name="activ_sign_up_email">Email</string>
     <string name="activ_sign_up_password">Password</string>
     <string name="activ_sign_up">Sign Up</string>
-    <string name="message">Welcome to ThONL! Our dedicated work team from ThONL are glad that you chose to use our app. Our number one goal is to provide you the opportunity to be able to contact medical healthcare professionals and get prescribed without the impossible queue times. Our doctors are one-of-a-kind and have years, if not decades, of experience in the medical healthcare world. Whether it\'s early in the morning, late in the afternoon, or even past mid-night, we are there for you and always will be!</string>
     <string name="terms_and_conditions_page">Terms and Conditions</string>
-    <string name="terms_and_conditions_message1">By agreeing to the terms and conditions, you are therefore agreeing to be truthful in the sense that, you are indeed in need of medical assistance. The medical services that are provided by this medical application are used by patients and doctors to prevent, diagnose, and treat an illness/medical condition. </string>
-    <string name="terms_and_conditions_message2">In the case that you are found guilty of NOT having an injury, disease, or any sort of medical condition and you the patient are doing this for your own benefit, then you will be prosecuted at the highest-level possible by the Department of Justice and undergo review. </string>
-    <string name="terms_and_conditions_message3">Besides breaking laws, you can find yourself go through a sequences of problems regarding your medical health. With this, we highly encourage you to act responsibly and use this medical application for valid reasons. </string>
     <string name="TermsAndConditionsButton">Terms And Conditions</string>
-    <string name="thonltextitle"> ThONL </string>
+    <string name="thonltextitle"> THONL </string>
 
 </resources>

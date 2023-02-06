@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
     android:padding="30dp">
 
     <TextView
@@ -23,6 +22,7 @@
     <!--UserName Portion is listed below: -->
 
     <!--Email Portion is listed below: -->
+
     <TextView
         android:id="@+id/HaveAnAccountRedirect"
         style="@style/TextAppearance.MaterialComponents.Caption"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/SignUpButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-200dp"
+        android:layout_marginBottom="-191dp"
         android:text="@string/HaveAnAccount"
         android:textColor="@color/black" />
 
@@ -76,14 +76,15 @@
     <!--Sign Up Button -->
     <Button
         android:id="@+id/SignUpButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="349dp"
+        android:layout_height="55dp"
         android:layout_below="@id/passwordTextInputLayout"
         android:layout_alignStart="@+id/passwordTextInputLayout"
         android:layout_alignEnd="@+id/passwordTextInputLayout"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="2dp"
         android:backgroundTint="#1F45FC"
         android:text="@string/activ_sign_up" />
 

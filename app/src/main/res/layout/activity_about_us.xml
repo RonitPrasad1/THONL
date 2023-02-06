@@ -4,32 +4,27 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/background2"
     android:layout_height="match_parent" >
 
     <TextView
         style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/AboutUsMessageTextView"
-        android:layout_alignEnd="@+id/AboutUsMessageTextView"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="104dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginBottom="496dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="642dp"
         android:gravity="center"
-        android:text="@string/about_us_page" />
+        android:text="@string/AboutUs" />
 
     <TextView
-        android:id="@+id/AboutUsMessageTextView"
+        android:id="@+id/ReturnBackTextView"
+        style="@style/TextAppearance.MaterialComponents.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="27dp"
-        android:layout_marginBottom="309dp"
-        android:gravity="center"
-        android:text="@string/message"
-        android:textColor="@color/black"
-        android:textStyle="italic" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="620dp"
+        android:text="@string/AboutUsBackRedirection"
+        android:textColor="@color/black" />
 
 </RelativeLayout>

@@ -37,7 +37,7 @@ class SignUpActivity : AppCompatActivity()
 
         //Essentially a back button:
         actionBar = supportActionBar!!
-        actionBar.title = "Secure Sign-up"
+        actionBar.title = "THONL"
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayShowHomeEnabled(true)
 

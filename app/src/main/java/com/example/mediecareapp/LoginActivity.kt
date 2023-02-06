@@ -1,12 +1,15 @@
 package com.example.MediECareApp
 
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
@@ -44,7 +47,7 @@ class LoginActivity : AppCompatActivity()
         progressDialog.setCanceledOnTouchOutside(false)
 
         actionBar = supportActionBar!!
-        actionBar.title = "Secure Log-in"
+        actionBar.title = "THONL"
 
         //Firebase Authentication:
         firebaseAuth = FirebaseAuth.getInstance()
@@ -53,6 +56,18 @@ class LoginActivity : AppCompatActivity()
         //Forgot Password Linker:
         binding.ForgotPasswordTextView.setOnClickListener {
             startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        }
+
+        var sharedPreferences = getSharedPreferences("userPref", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putString("password", password)
+        editor.apply()
+
+        val password = sharedPreferences.getString("password", "")
+        if (password?.isNotEmpty()!!)
+        {
+            firebaseLogin()
         }
 
         //Handles the clicking and un-clicking of the Remember Password button:
@@ -72,6 +87,11 @@ class LoginActivity : AppCompatActivity()
         //This handles the Log in button:
         binding.LoginButton.setOnClickListener {
             validateData()
+        }
+
+        //This handles the About Us Linker:
+        binding.AboutUsTextView.setOnClickListener {
+            startActivity(Intent(this, AboutUsActivity::class.java))
         }
 
             //This handles the Register button:
