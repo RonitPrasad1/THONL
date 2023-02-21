@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/EmailTextInputLayout"
         android:layout_centerHorizontal="false"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="23dp"
         android:text="@string/sign_up"
         android:textColor="@color/black"
         android:textStyle="bold" />
