@@ -37,7 +37,7 @@
         android:text="@string/TermsAndConditionsButton" />
 
     <Button
-        android:id="@+id/SettingsLogOutButton"
+        android:id="@+id/DisclaimerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/TermsAndConditionsButton"
@@ -45,6 +45,28 @@
         android:layout_marginStart="0dp"
         android:layout_marginBottom="-103dp"
         android:backgroundTint="#1F45FC"
+        android:text="Disclaimer" />
+
+    <Button
+        android:id="@+id/SettingsLogOutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TermsAndConditionsButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="-156dp"
+        android:backgroundTint="#1F45FC"
         android:text="Log Out" />
+
+    <TextView
+        android:id="@+id/ReturnBackTextView"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/SettingsLogOutButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-477dp"
+        android:text="@string/returnBack"
+        android:textColor="@color/black" />
 
 </RelativeLayout>

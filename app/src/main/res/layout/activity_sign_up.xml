@@ -19,7 +19,6 @@
         android:textColor="@color/black"
         android:textStyle="bold" />
 
-    <!--Email Portion is listed below: -->
     <TextView
         android:id="@+id/HaveAnAccountRedirect"
         style="@style/TextAppearance.MaterialComponents.Caption"

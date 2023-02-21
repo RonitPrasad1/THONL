@@ -27,9 +27,18 @@ class SettingsActivity : AppCompatActivity()
         actionBar = supportActionBar!!
         actionBar.title = "Settings"
 
-        //Handles the Terms And Conditions Link
+        //Handles the Terms And Conditions Link:
         binding.TermsAndConditionsButton.setOnClickListener {
             startActivity(Intent(this, TermsAndConditions::class.java))
+        }
+
+        //Disclaimer Button:
+//        binding.DisclaimerButton.setOnClickListener {
+//            startActivity(Intent(this, LoginActivity::class.java))
+//        }s
+
+        binding.ReturnBackTextView.setOnClickListener {
+            startActivity(Intent(this, HomePageActivity::class.java))
         }
 
         firebaseAuth = FirebaseAuth.getInstance()
