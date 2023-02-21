@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity()
             startActivity(Intent(this, ForgotPasswordActivity::class.java))
         }
 
-        var sharedPreferences = getSharedPreferences("userPref", Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("userPref", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
         editor.putString("password", password)
