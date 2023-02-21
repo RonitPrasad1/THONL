@@ -19,10 +19,7 @@
         android:textColor="@color/black"
         android:textStyle="bold" />
 
-    <!--UserName Portion is listed below: -->
-
     <!--Email Portion is listed below: -->
-
     <TextView
         android:id="@+id/HaveAnAccountRedirect"
         style="@style/TextAppearance.MaterialComponents.Caption"
@@ -87,5 +84,14 @@
         android:layout_marginEnd="2dp"
         android:backgroundTint="#1F45FC"
         android:text="@string/activ_sign_up" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="302dp"
+        android:layout_height="226dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"
+        app:srcCompat="@drawable/thonllogo" />
 
 </RelativeLayout>

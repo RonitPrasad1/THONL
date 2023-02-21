@@ -23,11 +23,11 @@
     <string name="about_us_page">About Us</string>
     <string name="settings_page">Settings Page</string>
     <string name="sign_up">Sign Up</string>
-    <string name="activ_sign_up_email">Email</string>
+    <string name="activ_sign_up_email"> Email</string>
     <string name="activ_sign_up_password">Password</string>
     <string name="activ_sign_up">Sign Up</string>
     <string name="terms_and_conditions_page">Terms and Conditions</string>
     <string name="TermsAndConditionsButton">Terms And Conditions</string>
-    <string name="thonltextitle"> THONL </string>
+    <string name="thonltextName"> TeleHealth Online </string>
 
 </resources>

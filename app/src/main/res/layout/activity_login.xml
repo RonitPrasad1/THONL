@@ -7,7 +7,15 @@
     android:layout_height="match_parent"
     android:padding="30dp">
 
-    <!--Email Portion is listed below: -->
+    <TextView
+        android:id="@+id/thonlTextitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:text="@string/thonltextName"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/TitleLabelTextView"
@@ -38,7 +46,6 @@
             android:textColor="@color/black" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <!--Password Portion is listed below: -->
     <com.google.android.material.textfield.TextInputLayout
@@ -113,10 +120,6 @@
         android:text="@string/remember_password"
         android:textSize="12sp" />
 
-    <!--Feature: Version Text -->
-
-    <!--Feature: Version Text -->
-
     <TextView
         android:id="@+id/AboutUsTextView"
         style="@style/TextAppearance.MaterialComponents.Caption"
@@ -154,5 +157,14 @@
         android:layout_marginBottom="-136dp"
         android:text="@string/Divider"
         android:textColor="#666666" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="302dp"
+        android:layout_height="226dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"
+        app:srcCompat="@drawable/thonllogo" />
 
 </RelativeLayout>
