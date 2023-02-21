@@ -1,3 +1,4 @@
+// Imports/Packages:
 package com.example.MediECareApp
 
 import android.app.ProgressDialog
@@ -11,21 +12,22 @@ import androidx.appcompat.app.ActionBar
 import com.example.MediECareApp.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
+// Sign Up Page Class:
 class SignUpActivity : AppCompatActivity()
 {
-    //Binding:
+    // Binding:
     private lateinit var binding : ActivitySignUpBinding
 
-    //ActionBar:
+    // ActionBar:
     private lateinit var actionBar : ActionBar
 
-    //ProgressDialog (Old code - Deprecated):
+    // ProgressDialog (Old code - Deprecated):
     private lateinit var progressDialog: ProgressDialog
 
-    //Firebase
+    // Firebase Auth:
     private lateinit var firebaseAuth : FirebaseAuth
 
-    //Data Variables:
+    // Data Variables:
     private var email = ""
     private var password = ""
 
@@ -35,22 +37,22 @@ class SignUpActivity : AppCompatActivity()
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Essentially a back button:
+        // Essentially a back button:
         actionBar = supportActionBar!!
         actionBar.title = "THONL"
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayShowHomeEnabled(true)
 
-        //Configure Progress Dialog:
+        // Configure Progress Dialog:
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait...")
         progressDialog.setMessage("Creating an account...")
         progressDialog.setCanceledOnTouchOutside(false)
 
-        //Firebase Authentication
+        // Firebase Authentication:
         firebaseAuth = FirebaseAuth.getInstance()
 
-        //This handles the Sign Up button:
+        // This handles the Sign Up button:
         binding.SignUpButton.setOnClickListener()
         {
             validateData()
@@ -62,7 +64,7 @@ class SignUpActivity : AppCompatActivity()
 
     }
 
-    //Validates the data for the Email and Password:
+    // Validates the data for the Email and Password:
     private fun validateData()
     {
         email = binding.EmailEditText.text.toString().trim()
@@ -92,10 +94,9 @@ class SignUpActivity : AppCompatActivity()
         {
             firebaseSignUp()
         }
-
     }
 
-    //Sign Up function for Firebase:
+    // Sign Up function for Firebase:
     private fun firebaseSignUp()
     {
         progressDialog.show()

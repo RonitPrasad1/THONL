@@ -1,3 +1,4 @@
+// Imports/Packages:
 package com.example.MediECareApp
 
 import android.app.ProgressDialog
@@ -8,29 +9,28 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
 import android.view.View
-import android.view.Window
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.example.MediECareApp.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
+// Login Page Class:
 class LoginActivity : AppCompatActivity()
 {
-    //Binding:
+    // Binding:
     private lateinit var binding : ActivityLoginBinding
 
-    //ActionBar:
+    // ActionBar:
     private lateinit var actionBar: ActionBar
 
-    //ProgressDialog (Old code - Deprecated):
+    // ProgressDialog (Old code - Deprecated):
     private lateinit var progressDialog : ProgressDialog
 
-    //Firebase Authentication:
+    // Firebase Authentication:
     private lateinit var firebaseAuth : FirebaseAuth
 
-    //Data Variables:
+    // Data Variables:
     private var email = ""
     private var password = ""
 
@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity()
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //ProgressDialog (Old Code - Deprecated):
+        // ProgressDialog (Old Code - Deprecated):
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait...")
         progressDialog.setMessage("Logging in...")
@@ -49,11 +49,11 @@ class LoginActivity : AppCompatActivity()
         actionBar = supportActionBar!!
         actionBar.title = "THONL"
 
-        //Firebase Authentication:
+        // Firebase Authentication:
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
 
-        //Forgot Password Linker:
+        // Forgot Password Linker:
         binding.ForgotPasswordTextView.setOnClickListener {
             startActivity(Intent(this, ForgotPasswordActivity::class.java))
         }
@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity()
             firebaseLogin()
         }
 
-        //Handles the clicking and un-clicking of the Remember Password button:
+        // Handles the clicking and un-clicking of the Remember Password button:
         binding.RememberPasswordRadioButton.setOnClickListener(View.OnClickListener {
             if (!(binding.RememberPasswordRadioButton.isSelected))
             {
@@ -84,24 +84,24 @@ class LoginActivity : AppCompatActivity()
             }
         })
 
-        //This handles the Log in button:
+        // This handles the Log in button:
         binding.LoginButton.setOnClickListener {
             validateData()
         }
 
-        //This handles the About Us Linker:
+        // This handles the About Us Linker:
         binding.AboutUsTextView.setOnClickListener {
             startActivity(Intent(this, AboutUsActivity::class.java))
         }
 
-            //This handles the Register button:
+            // This handles the Register button:
             val registerButton : Button = findViewById(R.id.RegisterButton)
         registerButton.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
     }
 
-    //Constraint Checker for Email And Password:
+    // Constraint Checker for Email And Password:
     private fun validateData()
     {
         email = binding.EmailEditText.text.toString().trim()
@@ -133,14 +133,14 @@ class LoginActivity : AppCompatActivity()
         }
     }
 
-    //Handles the log in for Firebase:
+    // Handles the log in for Firebase:
     private fun firebaseLogin()
     {
-        //Logical Recursive step of the progress:
+        // Logical Recursive step of the progress:
         progressDialog.show()
         firebaseAuth.signInWithEmailAndPassword(email, password)
 
-            //If you successfully log in, then:
+            // If you successfully log in, then:
             .addOnSuccessListener {
                 progressDialog.dismiss()
 
@@ -152,17 +152,17 @@ class LoginActivity : AppCompatActivity()
                 finish()
             }
 
-            //If you don't successfully log in, then:
+            // If you don't successfully log in, then:
             .addOnFailureListener { e->
                 progressDialog.dismiss()
                 Toast.makeText(this, " ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
 
-    //Authentication Function for User:
+    // Authentication Function for User:
     private fun checkUser()
     {
-        //Redirects the User to the Profile Activity page if that user is logged in:
+        // Redirects the User to the Profile Activity page if that user is logged in:
         val firebaseUser = firebaseAuth.currentUser
 
         if (firebaseUser != null)

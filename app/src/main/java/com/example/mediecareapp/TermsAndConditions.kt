@@ -1,3 +1,4 @@
+// Imports/Packages:
 package com.example.MediECareApp
 
 import android.app.Dialog
@@ -7,20 +8,21 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import com.example.MediECareApp.databinding.ActivityTermsAndConditionsBinding
 
+// Terms and Conditions Page Class:
 class TermsAndConditions : AppCompatActivity()
 {
-    //Binding:
+    // Binding:
     private lateinit var binding : ActivityTermsAndConditionsBinding
 
-    //ActionBar:
+    // ActionBar:
     private lateinit var actionBar: ActionBar
 
-    //Message:
+    // Terms and Conditions Message:
     private val termsAndConditions = "By agreeing to the terms and conditions, you are therefore agreeing to be truthful in the sense that, you are indeed in need of medical assistance. The medical services that are provided by this medical application are used by patients and doctors to prevent, diagnose, and treat an illness/medical condition.\n" +
             "In the case that you are found guilty of NOT having an injury, disease, or any sort of medical condition and you the patient are doing this for your own benefit, then you will be prosecuted at the highest-level possible by the Department of Justice and undergo review. \n" +
             "Besides breaking laws, you can find yourself go through a sequences of problems regarding your medical health. With this, we highly encourage you to act responsibly and use this medical application for valid reasons."
 
-    //Function to handle binding:
+    // Function to handle binding:
     override fun onCreate (savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,7 @@ class TermsAndConditions : AppCompatActivity()
         actionBar.title = "Terms and Conditions"
     }
 
+    // Error (Syntax): February 20th | 1:52 AM
     fun showTermsAndConditions()
     {
         // Create a new dialog window

@@ -1,3 +1,4 @@
+// Imports/Packages:
 package com.example.MediECareApp
 
 import com.example.MediECareApp.retrofit.RetroFitClient
@@ -18,23 +19,24 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+// Forgot Password Class:
 class ForgotPasswordActivity : AppCompatActivity()
 {
-    //Binding:
+    // Binding:
     private lateinit var binding: ActivityForgotPasswordBinding
 
     private lateinit var progressDialog: ProgressDialog
 
-    //ActionBar:
+    // ActionBar:
     private lateinit var actionBar: ActionBar
 
-    //Data Variable:
+    // Data Variable:
     private var currentEmail = ""
 
-    //For Forget Password Feature:
+    // For Forget Password Feature:
     private val retrofitClient = RetroFitClient.getClient()
 
-    //Handles the API Back-end work:
+    // Handles the API Back-end work:
     val apiService = retrofitClient.create(ApiService::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,18 +47,18 @@ class ForgotPasswordActivity : AppCompatActivity()
         actionBar = supportActionBar!!
         actionBar.title = "THONL"
 
-        //This handles the Log in button:
+        // This handles the Log in button:
         binding.ConfirmButton.setOnClickListener {
             validateForgotEmailChecker()
         }
 
-        //This redirects us back to the login page once you've done the "forgot password" check:
+        // This redirects us back to the login page once you've done the "forgot password" check:
         binding.LoginTextView.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 
-    //Validates the data for the Email:
+    // Validates the data for the Email:
     private fun validateForgotEmailChecker() {
         currentEmail = binding.EditEmailText.text.toString().trim()
 
@@ -70,6 +72,7 @@ class ForgotPasswordActivity : AppCompatActivity()
         }
     }
 
+    // Error (Syntax & Logic): Feb 20th | 10:54pm
     private fun sendResetEmail() {
         val email = binding.EditEmailText.text.toString().trim()
         if (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {

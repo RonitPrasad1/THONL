@@ -29,7 +29,7 @@
     <string name="terms_and_conditions_page">Terms and Conditions</string>
     <string name="TermsAndConditionsButton">Terms And Conditions</string>
     <string name="thonltextName"> TeleHealth Online </string>
-    <string name="forgotpasswordpremessage"> We’ll send your password reset information the email address linked to your account.</string>
+    <string name="forgotpasswordpremessage"> We’ll send your password reset information to the email address linked to your account.</string>
     <string name="returnBack"> Return <b> back! </b> </string>
 
 </resources>

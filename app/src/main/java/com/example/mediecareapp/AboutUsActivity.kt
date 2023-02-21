@@ -1,3 +1,4 @@
+// Imports/Packages:
 package com.example.MediECareApp
 
 import android.content.Intent
@@ -6,15 +7,16 @@ import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import com.example.MediECareApp.databinding.ActivityAboutUsBinding
 
+// About Us Page Class:
 class AboutUsActivity : AppCompatActivity()
 {
-    //Binding:
+    // Binding:
     private lateinit var binding : ActivityAboutUsBinding
 
-    //ActionBar:
+    // ActionBar:
     private lateinit var actionBar: ActionBar
 
-    //Function to handle binding:
+    // Function to handle binding:
     override fun onCreate (savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -22,12 +24,11 @@ class AboutUsActivity : AppCompatActivity()
         setContentView(binding.root)
 
         actionBar = supportActionBar!!
-        actionBar.title = "About Us"
+        actionBar.title = "THONL"
 
-        //This handles the Return Back feature in the About Us Page:
+        // This handles the Return Back feature in the About Us Page:
         binding.ReturnBackTextView.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
-
     }
 }

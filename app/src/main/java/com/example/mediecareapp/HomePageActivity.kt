@@ -1,3 +1,4 @@
+// Imports/Packages:
 package com.example.MediECareApp
 
 import android.content.Intent
@@ -6,12 +7,13 @@ import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import com.example.MediECareApp.databinding.ActivityHomePageBinding
 
+// Homepage Class:
 class HomePageActivity : AppCompatActivity()
 {
-    //Binding:
+    // Binding:
     private lateinit var binding : ActivityHomePageBinding
 
-    //ActionBar:
+    // ActionBar:
     private lateinit var actionBar: ActionBar
 
     override fun onCreate (savedInstanceState: Bundle?)
@@ -20,15 +22,12 @@ class HomePageActivity : AppCompatActivity()
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Handles the "Settings" button:
+        // Handles the "Settings" button:
         binding.SettingImageButton.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
 
         actionBar = supportActionBar!!
         actionBar.title = "Home Page"
-
-        //Remove the Home Page Text View Box
-
     }
 }

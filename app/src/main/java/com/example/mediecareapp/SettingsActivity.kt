@@ -1,3 +1,4 @@
+// Imports/Packages:
 package com.example.MediECareApp
 
 import android.content.Intent
@@ -7,15 +8,16 @@ import androidx.appcompat.app.ActionBar
 import com.example.MediECareApp.databinding.ActivitySettingsBinding
 import com.google.firebase.auth.FirebaseAuth
 
+// Settings Page Class:
 class SettingsActivity : AppCompatActivity()
 {
-    //Binding:
+    // Binding:
     private lateinit var binding : ActivitySettingsBinding
 
-    //ActionBar:
+    // ActionBar:
     private lateinit var actionBar: ActionBar
 
-    //Firebase Authentication
+    // Firebase Authentication
     private lateinit var firebaseAuth : FirebaseAuth
 
     override fun onCreate (savedInstanceState: Bundle?)
@@ -32,7 +34,7 @@ class SettingsActivity : AppCompatActivity()
             startActivity(Intent(this, TermsAndConditions::class.java))
         }
 
-        //Disclaimer Button:
+        // Disclaimer Button:
 //        binding.DisclaimerButton.setOnClickListener {
 //            startActivity(Intent(this, LoginActivity::class.java))
 //        }s
