@@ -1,9 +1,5 @@
 // Imports/Packages:
 package com.example.MediECareApp
-
-import com.example.MediECareApp.retrofit.RetroFitClient
-import com.example.MediECareApp.retrofit.ApiService
-
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,11 +9,8 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.example.MediECareApp.databinding.ActivityForgotPasswordBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+
+import com.google.firebase.auth.FirebaseAuth
 
 // Forgot Password Class:
 class ForgotPasswordActivity : AppCompatActivity()
@@ -32,14 +25,10 @@ class ForgotPasswordActivity : AppCompatActivity()
 
     // Data Variable:
     private var currentEmail = ""
+    private lateinit var firebaseAuth: FirebaseAuth
 
-    // For Forget Password Feature:
-    private val retrofitClient = RetroFitClient.getClient()
-
-    // Handles the API Back-end work:
-    val apiService = retrofitClient.create(ApiService::class.java)
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         binding = ActivityForgotPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -47,9 +36,11 @@ class ForgotPasswordActivity : AppCompatActivity()
         actionBar = supportActionBar!!
         actionBar.title = "THONL"
 
+        firebaseAuth = FirebaseAuth.getInstance()
+
         // This handles the Log in button:
         binding.ConfirmButton.setOnClickListener {
-            validateForgotEmailChecker()
+            forgotPassword()
         }
 
         // This redirects us back to the login page once you've done the "forgot password" check:
@@ -59,10 +50,11 @@ class ForgotPasswordActivity : AppCompatActivity()
     }
 
     // Validates the data for the Email:
-    private fun validateForgotEmailChecker() {
+    private fun forgotPassword()
+    {
         currentEmail = binding.EditEmailText.text.toString().trim()
-
-        if (TextUtils.isEmpty(currentEmail)) {
+        if (TextUtils.isEmpty(currentEmail))
+        {
             binding.EditEmailText.error =
                 "You can not leave the email field blank, please retry again!"
         }
@@ -70,59 +62,24 @@ class ForgotPasswordActivity : AppCompatActivity()
         {
             binding.EditEmailText.error = "Invalid Email Formatting, please use a proper format!"
         }
-    }
-
-    // Error (Syntax & Logic): Feb 20th | 10:54pm
-    private fun sendResetEmail() {
-        val email = binding.EditEmailText.text.toString().trim()
-        if (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-
-            //Show progress dialog
+        else
+        {
             progressDialog = ProgressDialog(this)
-            progressDialog.setMessage("Sending password reset email...")
+            progressDialog.setTitle("Resetting your Password")
+            progressDialog.setMessage("Please wait while we are resetting your password...")
+            progressDialog.setCanceledOnTouchOutside(false)
             progressDialog.show()
 
-            //Make network request to send password reset email:
-            val apiService = RetroFitClient.getClient().create(ApiService::class.java)
-            apiService.sendPasswordResetEmail(email)
-                .enqueue(object : Callback<Void> {
-                    override fun onResponse(call: Call <Void>, response: Response<Void>) {
-
-                        //Hide progress dialog:
-                        progressDialog.dismiss()
-
-                        //Check if request was successful:
-                        if (response.isSuccessful)
-                        {
-                            //Display success message:
-                            Toast.makeText(
-                                this@ForgotPasswordActivity,
-                                "Password reset email sent!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                        else
-                        {
-                            //Display error message:
-                            Toast.makeText(
-                                this@ForgotPasswordActivity,
-                                "Failed to send password reset email.",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    }
-
-                    override fun onFailure(call: Call<Void>, t: Throwable) {
-                        //Display progress dialog:
-                        progressDialog.dismiss()
-
-                        //Display error message:
-                        Toast.makeText(
-                            this@ForgotPasswordActivity,
-                            "Failed to send password reset email.",
-                            Toast.LENGTH_SHORT).show()
-                    }
-                })
+            // Update password for the current user:
+            firebaseAuth.sendPasswordResetEmail(currentEmail).addOnSuccessListener {
+                progressDialog.dismiss()
+                Toast.makeText(this@ForgotPasswordActivity, "Password reset email sent!", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(applicationContext, LoginActivity::class.java))
+                finish()
+            }.addOnFailureListener {
+                progressDialog.dismiss()
+                Toast.makeText(this@ForgotPasswordActivity, it.message, Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

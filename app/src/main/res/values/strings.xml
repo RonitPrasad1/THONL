@@ -18,7 +18,7 @@
     <string name="remember_password">Remember Password</string>
     <string name="enter_email">Enter Email</string>
     <string name="submit">Submit</string>
-    <string name="reset_password">Reset Password</string>
+    <string name="reset_password">Forgot Password</string>
     <string name="home_page">My Health Page</string>
     <string name="about_us_page">About Us</string>
     <string name="settings_page">Settings Page</string>
@@ -29,7 +29,8 @@
     <string name="terms_and_conditions_page">Terms and Conditions</string>
     <string name="TermsAndConditionsButton">Terms And Conditions</string>
     <string name="thonltextName"> TeleHealth Online </string>
-    <string name="forgotpasswordpremessage"> We’ll send your password reset information to the email address linked to your account.</string>
+    <string name="forgotpasswordpremessage"> We’ll send your password reset information to the email address linked to your account</string>
     <string name="returnBack"> Return <b> back! </b> </string>
+    <string name="title_activity_eye_care">EyeCareActivity</string>
 
 </resources>

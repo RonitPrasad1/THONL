@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.MediECareApp">
-
     <!-- Internet Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,31 +11,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MediECareApp">
-
+        <activity
+            android:name="com.example.mediecareapp.EyeCareActivity"
+            android:exported="false"
+            android:label="@string/title_activity_eye_care"
+            android:theme="@style/Theme.MediECareApp.NoActionBar" />
         <activity
             android:name=".TermsAndConditions"
             android:exported="false" />
-
         <activity
             android:name=".SettingsActivity"
             android:exported="false" />
-
         <activity
             android:name=".AboutUsActivity"
             android:exported="false" />
-
         <activity
             android:name=".HomePageActivity"
             android:exported="false" />
-
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
-
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="true">

@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/SettingsLogOutButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-420dp"
+        android:layout_marginBottom="-426dp"
         android:text="@string/returnBack"
         android:textColor="@color/black" />
 
