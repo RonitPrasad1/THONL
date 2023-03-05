@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/AppointmentPageTextField"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="665dp"
+        android:gravity="center"
+        android:text="@string/AppointmentPage"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/AppointmentPageTextField"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="618dp"
+        android:gravity="center"
+        android:text="@string/AppointmentPageDescription"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/firstnamelastnametitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/FirstandLastName"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="-3dp"
+        android:text="@string/name"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/doctorsnametitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstnamelastnametitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="-3dp"
+        android:text="@string/doctors_name"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dateofbirthtitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doctorsnametitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="-3dp"
+        android:text="@string/date_of_birth"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/gendertitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dateofbirthtitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginBottom="-3dp"
+        android:text="@string/gender"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/phonenumbertitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gendertitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="-3dp"
+        android:text="@string/phone_number"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Symptomstitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phonenumbertitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="-3dp"
+        android:text="@string/symptoms"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/FirstandLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/AppointmentPageTextField"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-152dp"
+        android:backgroundTint="@color/white"
+        android:hint="@string/FirstNameandLastName"
+        android:textSize="12.5sp"
+        android:inputType="textPersonName"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/DoctorsName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/FirstandLastName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="-121dp"
+        android:backgroundTint="@color/white"
+        android:hint="@string/DoctorsName"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textSize="12.5sp" />
+
+    <EditText
+        android:id="@+id/DateOfBirth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/DoctorsName"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginBottom="-119dp"
+        android:backgroundTint="@color/white"
+        android:hint="@string/DateOfBirth"
+        android:inputType="date"
+        android:textColor="@color/black"
+        android:textSize="12.5sp" />
+
+    <EditText
+        android:id="@+id/Gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/DateOfBirth"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="-120dp"
+        android:backgroundTint="@color/white"
+        android:hint="@string/Gender"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textSize="12.5sp" />
+
+    <EditText
+        android:id="@+id/PhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Gender"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="-120dp"
+        android:backgroundTint="@color/white"
+        android:hint="@string/PhoneNumber"
+        android:inputType="phone"
+        android:textColor="@color/black"
+        android:textSize="12.5sp" />
+
+    <EditText
+        android:id="@+id/Symptoms"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_above="@+id/Gender"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="-236dp"
+        android:backgroundTint="@color/white"
+        android:hint="@string/symptomsDescriptionhint"
+        android:inputType="textMultiLine"
+        android:textColor="@color/black"
+        android:textSize="12.5sp" />
+
+    <!--Feature: Confirm Appointment Button  -->
+    <Button
+        android:id="@+id/ConfirmAppointButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Symptomstitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="66dp"
+        android:backgroundTint="#1F45FC"
+        android:text="@string/confirm" />
+
+</RelativeLayout>

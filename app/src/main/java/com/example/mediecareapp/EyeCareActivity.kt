@@ -1,8 +1,10 @@
+// Imports/Packages:
 package com.example.mediecareapp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
@@ -21,6 +23,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.example.MediECareApp.AppointmentPageActivity
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
+import androidx.activity.result.contract.ActivityResultContracts
 
 @Preview(showBackground = true)
 @Composable
@@ -58,7 +64,6 @@ fun CenteredTitle(title: String)
                 .wrapContentHeight()
         )
     }
-
 }
 
 @Composable
@@ -79,6 +84,8 @@ fun EyeCareScreen()
 @Composable
 fun DoctorCards()
 {
+    val context = LocalContext.current
+
     val namesPlusQualifications = listOf(
         "Dr. Nguyen Ophthalmologist",
         "Dr. Smithson Ophthalmologist ",
@@ -100,6 +107,12 @@ fun DoctorCards()
     // Create a list of Boolean values to track the expanded state of each card
     val expandedStates = remember {
         mutableStateListOf<Boolean>().apply { repeat(namesPlusQualifications.size) { add(false) } }
+    }
+
+    val launcher = rememberLauncherForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        // No need to do anything here
     }
 
     Column(
@@ -133,7 +146,7 @@ fun DoctorCards()
                             modifier = Modifier
                                 .fillMaxSize()
                                 .animateContentSize()
-                                .padding(4.dp, 50.dp, 4.dp, 4.dp),
+                                .padding(4.dp, 50.dp, 2.dp, 8.dp),
                             verticalArrangement = Arrangement.SpaceEvenly,
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
@@ -148,16 +161,14 @@ fun DoctorCards()
                                 Text(
                                     text = shortDescriptionOfEachDoctors[cardIndex],
                                     textAlign = TextAlign.Center,
-                                    style = MaterialTheme.typography.body2.copy(fontSize = 11.sp),
+                                    style = MaterialTheme.typography.body2.copy(fontSize = 11.4.sp),
                                 )
 
                                 Button(
-                                    onClick = {
-                                        // This handles the Appointment Button:
-                                        // binding.AboutUsTextView.setOnClickListener {
-                                        //     startActivity(Intent(this, AppointmentPage::class.java))
-                                        // }
-                                    },
+                                        onClick = {
+                                            val intent = Intent(context, AppointmentPageActivity::class.java)
+                                            launcher.launch(intent)
+                                        },
                                     modifier = Modifier
                                         .padding(top = 1.dp, bottom = 1.dp)
                                         .fillMaxWidth()

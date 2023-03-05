@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MediECareApp">
         <activity
+            android:name=".AppointmentPageActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.mediecareapp.EyeCareActivity"
             android:exported="false"
             android:label="@string/title_activity_eye_care"
@@ -39,7 +42,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

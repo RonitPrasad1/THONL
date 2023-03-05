@@ -32,5 +32,20 @@
     <string name="forgotpasswordpremessage"> We’ll send your password reset information to the email address linked to your account</string>
     <string name="returnBack"> Return <b> back! </b> </string>
     <string name="title_activity_eye_care">EyeCareActivity</string>
+    <string name="AppointmentPage"> Doctor Appointment Request Form </string>
+    <string name="AppointmentPageDescription"> Fill the form below and we will get back to you with more updates regarding your appointment. </string>
+    <string name="FirstNameandLastName"> First Name and Last Name </string>
+    <string name="DoctorsName"> Doctors Name </string>
+    <string name="DateOfBirth"> MM/DD/YYYY </string>
+    <string name="Gender"> M / F / Other </string>
+    <string name="PhoneNumber"> (xxx) - xxx - xxxx </string>
+    <string name="name">Name</string>
+    <string name="doctors_name">Doctors Name</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="gender">Gender</string>
+    <string name="symptomsDescriptionhint"> Enter the basic description of your symptoms here...</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="confirm">CONFIRM</string>
 
 </resources>
