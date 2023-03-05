@@ -17,6 +17,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
@@ -25,8 +26,10 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun EyeCareActivityPreview()
 {
-    doctorCards ()
+    DoctorCards()
+    CenteredTitle("Eye Care Assistance")
 }
+
 class EyeCareActivity : AppCompatActivity()
 {
     override fun onCreate(savedInstanceState: Bundle?)
@@ -40,91 +43,140 @@ class EyeCareActivity : AppCompatActivity()
 }
 
 @Composable
+fun CenteredTitle(title: String)
+{
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.TopCenter
+    ) {
+        Text(
+            text = "Eye Care Assistance",
+            fontWeight = FontWeight.Bold,
+            fontSize = 18.5.sp,
+            modifier = Modifier
+                .height(112.dp) // adjust the value as needed to scale vertically
+                .wrapContentHeight()
+        )
+    }
+
+}
+
+@Composable
 fun EyeCareScreen()
 {
     Scaffold(
         topBar =
         {
             TopAppBar(
-                title = { Text("Eye Care Page") },
-                backgroundColor = MaterialTheme.colors.primary
+                title = { Text("") },
+                backgroundColor = Color.Black
             )
         },
-        content = { doctorCards () }
+        content = { DoctorCards() }
     )
 }
 
 @Composable
-fun doctorCards() {
-    val titles = listOf (
+fun DoctorCards()
+{
+    val namesPlusQualifications = listOf(
         "Dr. Nguyen Ophthalmologist",
         "Dr. Smithson Ophthalmologist ",
-        "Dr. Something Qualifications",
-        "Dr. Something Qualifications",
-        "Dr. Something Qualifications",
-        "Dr. Something Qualifications"
+        "Dr. Jakeb Ophthalmologist",
+        "Dr. Rajesh Ophthalmologist",
+        "Dr. Koothrapali Ophthalmologist",
+        "Dr. Alexandra Ophthalmologist"
     )
-    var expandedState by remember { mutableStateOf(false) }
-    Row(
+
+    val shortDescriptionOfEachDoctors = listOf(
+        "An highly qualified and experienced ophthalmologist that has multiple decades of experience.",
+        "An highly skilled and experienced ophthalmologist with a passion for helping his patients.",
+        "Jakeb's patients appreciate his friendly and patient approach to helping them with their issues at hand.",
+        "He is passionate about utilizing the latest technology to provide his patients with the best possible outcomes.",
+        "Koothrapali is known for his exceptional skills in treating patients with basic and complex eye conditions.",
+        "Has a special interest in glaucoma and has helped countless patients manage this condition."
+    )
+
+    // Create a list of Boolean values to track the expanded state of each card
+    val expandedStates = remember {
+        mutableStateListOf<Boolean>().apply { repeat(namesPlusQualifications.size) { add(false) } }
+    }
+
+    Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 10.dp, vertical = 140.dp),
-        horizontalArrangement = Arrangement.spacedBy(16.dp)
+            .padding(horizontal = 10.dp, vertical = 85.dp)
     ) {
-        for (i in 0 until 6)
-        {
-            Card(
+        namesPlusQualifications.chunked(2).forEach { chunk ->
+            Row(
                 modifier = Modifier
-                    .size(177.5.dp)
-                    .clip(RoundedCornerShape(14.dp))
-                    .background(Color.White)
-                    .clickable { expandedState = !expandedState },
-                elevation = 4.dp,
-                shape = RoundedCornerShape(16.dp),
-                contentColor = MaterialTheme.colors.onSurface,
-                border = BorderStroke(1.dp, Color(0xFF2045FC))
+                    .fillMaxWidth()
+                    .padding(vertical = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .animateContentSize()
-                        .padding(4.dp, 70.dp, 4.dp, 4.dp),
-                    verticalArrangement = Arrangement.SpaceEvenly,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = if(expandedState) "" else titles[i],
-                        textAlign = TextAlign.Center,
-                        style = MaterialTheme.typography.h6.copy(fontSize = 15.5.sp)
-                    )
-                    if (expandedState)
-                    {
-                        Button(
-                            onClick =
-                            {
-                                // This handles the Appointment Button:
-//                                binding.AboutUsTextView.setOnClickListener {
-//                                    startActivity(Intent(this, AppointmentPage::class.java))
-//                                }
-                            },
-                            modifier = Modifier
-                                .padding(top = 1.dp, bottom = 1.dp)
-                                .fillMaxWidth()
-                                .height(60.dp)
-                                .padding(14.dp)
-                                .background(Color(0xFF2045FC), RoundedCornerShape(30.dp)),
+                chunk.forEachIndexed { index, title ->
+                    val cardIndex = namesPlusQualifications.indexOf(title)
 
-                            shape = RoundedCornerShape(28),
-                            colors = ButtonDefaults.buttonColors(
-                                backgroundColor = Color(0xFF2045FC),
-                            )
+                    Card(
+                        modifier = Modifier
+                            .size(180.dp)
+                            .clip(RoundedCornerShape(14.dp))
+                            .background(Color.White)
+                            .clickable { expandedStates[cardIndex] = !expandedStates[cardIndex] },
+                        elevation = 4.dp,
+                        shape = RoundedCornerShape(16.dp),
+                        contentColor = MaterialTheme.colors.onSurface,
+                        border = BorderStroke(1.dp, Color(0xFF2045FC))
+                    ) {
+
+                        Column(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .animateContentSize()
+                                .padding(4.dp, 50.dp, 4.dp, 4.dp),
+                            verticalArrangement = Arrangement.SpaceEvenly,
+                            horizontalAlignment = Alignment.CenterHorizontally
                         ) {
-                            Text(
-                                "Book Appointment",
-                                color = Color.White,
-                                fontSize = 10.sp,
-                                style = MaterialTheme.typography.body1
-                            )
+//                            Text(
+//                                text = if (expandedStates[cardIndex]) "" else title,
+//                                textAlign = TextAlign.Center,
+//                                style = MaterialTheme.typography.h6.copy(fontSize = 15.5.sp)
+//                            )
+
+                            if (expandedStates[cardIndex])
+                            {
+                                Text(
+                                    text = shortDescriptionOfEachDoctors[cardIndex],
+                                    textAlign = TextAlign.Center,
+                                    style = MaterialTheme.typography.body2.copy(fontSize = 11.sp),
+                                )
+
+                                Button(
+                                    onClick = {
+                                        // This handles the Appointment Button:
+                                        // binding.AboutUsTextView.setOnClickListener {
+                                        //     startActivity(Intent(this, AppointmentPage::class.java))
+                                        // }
+                                    },
+                                    modifier = Modifier
+                                        .padding(top = 1.dp, bottom = 1.dp)
+                                        .fillMaxWidth()
+                                        .height(60.dp)
+                                        .padding(14.dp)
+                                        .background(Color(0xFF2045FC), RoundedCornerShape(30.dp)),
+                                    shape = RoundedCornerShape(28),
+                                    colors = ButtonDefaults.buttonColors(
+                                        backgroundColor = Color(0xFF2045FC),
+                                    )
+                                ) {
+                                    Text(
+                                        "Book Appointment",
+                                        color = Color.White,
+                                        fontSize = 11.4.sp,
+                                        style = MaterialTheme.typography.body1
+                                    )
+                                }
+                            }
                         }
                     }
                 }
